@@ -1,8 +1,8 @@
 package com.example.exercise;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.util.Log;
 
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button button;
-    TextView text;
     private static final String TAG = "exercise";
 
     @Override
@@ -22,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreate");
 
-        button = findViewById(R.id.btnOk);
+        button = findViewById(R.id.btnOne);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text = findViewById(R.id.txtHello);
-                text.setText("Hello Buddhika");
+                Intent i = new Intent(getApplicationContext(), ActivityTwo.class);
+                startActivity(i);
             }
         });
     }
@@ -80,4 +79,6 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         Log.i(TAG, "onSaveInstanceState");
     }
+
+
 }
